@@ -1,18 +1,21 @@
 package guru.springframework.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-/**
- * Created by jt on 12/26/19.
- */
+import guru.springframework.sfgdi.services.GreetingService;
+
 @Controller
 public class SetterInjectedController {
 
-    private GreetingService greetingService;
-
+	//Propriedade
+	private GreetingService greetingService;
+	
+	// O set deste método permite a injeção do objeto GreetingService
+	/*
+	 * Diferentemente da injeção por propriedade, aqui as tags são adicionadas no método set
+	 */
     @Qualifier("setterInjectedGreetingService")
     @Autowired
     public void setGreetingService(GreetingService greetingService) {
@@ -22,4 +25,5 @@ public class SetterInjectedController {
     public String getGreeting(){
         return greetingService.sayGreeting();
     }
+	
 }
