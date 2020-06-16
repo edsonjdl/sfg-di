@@ -14,10 +14,12 @@
 	<name>sfg-di</name>
 	<description>Dependency Injection examples</description>
 
+<!-- ALTERADO para usar  Java 8
 	<properties>
+	
 		<java.version>11</java.version>
 	</properties>
-
+ -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
